@@ -45,3 +45,7 @@ gem "active_model_serializers", "~> 0.10.12"
 gem "json", "~> 2.5"
 
 gem "faker", "~> 2.15"
+
+gem "rest-client", "~> 2.1"
+
+gem "themoviedb-api", "~> 1.3"
