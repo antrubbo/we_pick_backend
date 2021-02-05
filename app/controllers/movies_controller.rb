@@ -11,7 +11,7 @@ class MoviesController < ApplicationController
     end 
 
     def popular
-        
+        # make API call here, create route to make fetch go here
     end
 
     private

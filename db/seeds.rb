@@ -11,11 +11,13 @@ MovieChoice.destroy_all
 
 Tmdb::Api.key("99fdd78beedc847a99f420187e092842")
 
-# puts "Creating Users"
+puts "Creating Users"
 
-# 3.times do
-#     User.create(username: Faker::Name.name, email: Faker::Internet.email)
-# end
+5.times do
+    User.create(username: Faker::Name.name, email: Faker::Internet.email)
+end
+
+# --------------------------------------------------------------------------- 
 
 puts "Creating Popular Movies"
 
@@ -31,5 +33,14 @@ def create_popular_movies(popular_movies, config)
     end
 end
 
-
 make_popular_api_call
+
+#---------------------------------------------------------------------------
+
+puts "Creating Lists"
+
+List.create(name: Faker::TvShows::MichaelScott.quote, user_id: User.first.id)
+List.create(name: Faker::TvShows::MichaelScott.quote, user_id: User.second.id)
+List.create(name: Faker::TvShows::MichaelScott.quote, user_id: User.third.id)
+List.create(name: Faker::TvShows::MichaelScott.quote, user_id: User.fourth.id)
+List.create(name: Faker::TvShows::MichaelScott.quote, user_id: User.fifth.id)
