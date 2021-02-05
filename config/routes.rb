@@ -5,5 +5,5 @@ Rails.application.routes.draw do
   resources :users
   
   post '/login', to: 'users#login'
-  delete "/user/:id", to: "users#destroy"
+  
 end

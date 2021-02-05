@@ -44,3 +44,6 @@ List.create(name: Faker::TvShows::MichaelScott.quote, user_id: User.second.id)
 List.create(name: Faker::TvShows::MichaelScott.quote, user_id: User.third.id)
 List.create(name: Faker::TvShows::MichaelScott.quote, user_id: User.fourth.id)
 List.create(name: Faker::TvShows::MichaelScott.quote, user_id: User.fifth.id)
+
+puts "Creating Movie Choices"
+
