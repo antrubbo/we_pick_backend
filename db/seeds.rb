@@ -11,6 +11,8 @@ MovieChoice.destroy_all
 
 Tmdb::Api.key("99fdd78beedc847a99f420187e092842")
 
+#------------------------------------------------------------------------
+
 puts "Creating Users"
 
 5.times do
@@ -45,5 +47,9 @@ List.create(name: Faker::TvShows::MichaelScott.quote, user_id: User.third.id)
 List.create(name: Faker::TvShows::MichaelScott.quote, user_id: User.fourth.id)
 List.create(name: Faker::TvShows::MichaelScott.quote, user_id: User.fifth.id)
 
+#---------------------------------------------------------------------------------
+
 puts "Creating Movie Choices"
 
+MovieChoice.create(list_id: List.first, movie_id: Movie.first.id)
+MovieChoice.create(list_id: List.second, movie_id: Movie.second.id)

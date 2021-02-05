@@ -1,12 +1,12 @@
 class MovieChoicesController < ApplicationController
     def index
-        choices = MovieChoice.all 
-        render json: choices
+        movie_choices = MovieChoice.all 
+        render json: movie_choices
     end
 
     def create 
-        choice = MovieChoice.create(movie_choice_params) 
-        render json: choice
+        movie_choice = MovieChoice.create!(movie_choice_params) 
+        render json: movie_choice
     end 
 
     private 
