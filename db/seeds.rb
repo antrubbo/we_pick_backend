@@ -51,5 +51,34 @@ List.create(name: Faker::TvShows::MichaelScott.quote, user_id: User.fifth.id)
 
 puts "Creating Movie Choices"
 
-MovieChoice.create(list_id: List.first, movie_id: Movie.first.id)
-MovieChoice.create(list_id: List.second, movie_id: Movie.second.id)
+num = Random.new
+
+MovieChoice.create(list_id: List.first.id, movie_id: num.rand(1..4))
+MovieChoice.create(list_id: List.first.id, movie_id: num.rand(5..8))
+MovieChoice.create(list_id: List.first.id, movie_id: num.rand(9..12))
+MovieChoice.create(list_id: List.first.id, movie_id: num.rand(13..16))
+MovieChoice.create(list_id: List.first.id, movie_id: num.rand(17..20))
+
+MovieChoice.create(list_id: List.second.id, movie_id: num.rand(1..4))
+MovieChoice.create(list_id: List.second.id, movie_id: num.rand(5..8))
+MovieChoice.create(list_id: List.second.id, movie_id: num.rand(9..12))
+MovieChoice.create(list_id: List.second.id, movie_id: num.rand(13..16))
+MovieChoice.create(list_id: List.second.id, movie_id: num.rand(17..20))
+
+MovieChoice.create(list_id: List.third.id, movie_id: num.rand(1..4))
+MovieChoice.create(list_id: List.third.id, movie_id: num.rand(5..8))
+MovieChoice.create(list_id: List.third.id, movie_id: num.rand(9..12))
+MovieChoice.create(list_id: List.third.id, movie_id: num.rand(13..16))
+MovieChoice.create(list_id: List.third.id, movie_id: num.rand(17..20))
+
+MovieChoice.create(list_id: List.fourth.id, movie_id: num.rand(1..4))
+MovieChoice.create(list_id: List.fourth.id, movie_id: num.rand(5..8))
+MovieChoice.create(list_id: List.fourth.id, movie_id: num.rand(9..12))
+MovieChoice.create(list_id: List.fourth.id, movie_id: num.rand(13..16))
+MovieChoice.create(list_id: List.fourth.id, movie_id: num.rand(17..20))
+
+MovieChoice.create(list_id: List.fifth.id, movie_id: num.rand(1..4))
+MovieChoice.create(list_id: List.fifth.id, movie_id: num.rand(5..8))
+MovieChoice.create(list_id: List.fifth.id, movie_id: num.rand(9..12))
+MovieChoice.create(list_id: List.fifth.id, movie_id: num.rand(13..16))
+MovieChoice.create(list_id: List.fifth.id, movie_id: num.rand(17..20))
