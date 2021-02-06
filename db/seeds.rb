@@ -82,3 +82,12 @@ MovieChoice.create(list_id: List.fifth.id, movie_id: num.rand(5..8))
 MovieChoice.create(list_id: List.fifth.id, movie_id: num.rand(9..12))
 MovieChoice.create(list_id: List.fifth.id, movie_id: num.rand(13..16))
 MovieChoice.create(list_id: List.fifth.id, movie_id: num.rand(17..20))
+
+def movie_detail
+    movie = Tmdb::Movie.detail(550)
+    movie_videos = Tmdb::Movie.videos(movie.id)
+    #  -- movie_videos[0].key to get youtube ID
+    debugger
+end
+
+movie_detail
