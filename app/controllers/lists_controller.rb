@@ -10,5 +10,4 @@ class ListsController < ApplicationController
         render json: list
     end
 
-
 end

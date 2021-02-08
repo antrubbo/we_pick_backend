@@ -9,6 +9,12 @@ class MovieChoicesController < ApplicationController
         render json: movie_choice
     end 
 
+    def destroy
+        movie_choice = MovieChoice.find_by(id: params[:id])
+        movie_choice.destroy
+        render json: movie_choice
+    end
+
     private 
 
     def movie_choice_params 
