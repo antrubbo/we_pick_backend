@@ -43,10 +43,10 @@ class UsersController < ApplicationController
     def user_search 
         # user = User.find_by("username LIKE ?", params[:username])
         user = User.all.select { |user| user.username.downcase == params[:username]}
-        if user 
-            render json: user
-        else  
+        if user == []
             render json: {errors: "Username does not match our records"}
+        else  
+            render json: user
         end
     end
 

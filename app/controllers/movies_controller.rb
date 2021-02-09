@@ -31,10 +31,6 @@ class MoviesController < ApplicationController
         render json: movie_deets
     end
 
-    def get_id
-        render json: $movie_id
-    end
-
     def search 
         search_movie = Tmdb::Search.movie(params[:title])
         render json: search_movie

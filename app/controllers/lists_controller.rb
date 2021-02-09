@@ -12,7 +12,7 @@ class ListsController < ApplicationController
 
     def movies 
         list = List.find_by(id: params[:id])
-        render json: list.movies.ids
+        render json: list.movies
         # custom_movies = []
   
         # list.movies.map do |movie| 
