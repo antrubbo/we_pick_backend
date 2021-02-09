@@ -40,6 +40,16 @@ class UsersController < ApplicationController
         end
     end
 
+    def user_search 
+        # user = User.find_by("username LIKE ?", params[:username])
+        user = User.all.select { |user| user.username.downcase == params[:username]}
+        if user 
+            render json: user
+        else  
+            render json: {errors: "Username does not match our records"}
+        end
+    end
+
     def destroy
         user = User.find_by(id: params[:id])
         user.destroy
