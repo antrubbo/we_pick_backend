@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_03_163153) do
+ActiveRecord::Schema.define(version: 2021_02_09_154251) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,7 +41,6 @@ ActiveRecord::Schema.define(version: 2021_02_03_163153) do
     t.string "video_key", default: ""
     t.string "poster_path"
     t.integer "search_id"
-    t.string "homepage", default: ""
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

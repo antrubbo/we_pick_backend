@@ -1,4 +1,4 @@
 class MovieChoiceSerializer < ActiveModel::Serializer
-  attributes :id, :list, :movie
+  attributes :id, :movie
   belongs_to :movie
 end
