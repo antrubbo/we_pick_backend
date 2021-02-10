@@ -31,7 +31,7 @@ end
 
 def create_popular_movies(popular_movies, config)
     popular_movies.results.each do |m|
-        Movie.create(title: m.title, description: m.overview, release_date: m.release_date, genres: m.genre_ids, runtime: m.runtime, poster_path: "#{config.images.base_url + config.images.backdrop_sizes[0]}" + m.poster_path, search_id: m.id)
+        Movie.create(title: m.title, description: m.overview, release_date: m.release_date, genres: m.genre_ids, runtime: m.runtime, poster_path: m.poster_path, search_id: m.id)
     end
 end
 
@@ -39,13 +39,13 @@ make_popular_api_call
 
 #---------------------------------------------------------------------------
 
-puts "Creating Lists"
+# puts "Creating Lists"
 
-List.create(name: Faker::TvShows::MichaelScott.quote, user_id: User.first.id)
-List.create(name: Faker::TvShows::MichaelScott.quote, user_id: User.second.id)
-List.create(name: Faker::TvShows::MichaelScott.quote, user_id: User.third.id)
-List.create(name: Faker::TvShows::MichaelScott.quote, user_id: User.fourth.id)
-List.create(name: Faker::TvShows::MichaelScott.quote, user_id: User.fifth.id)
+# List.create(user_id: User.first.id)
+# List.create(user_id: User.second.id)
+# List.create(user_id: User.third.id)
+# List.create(user_id: User.fourth.id)
+# List.create(user_id: User.fifth.id)
 
 #---------------------------------------------------------------------------------
 

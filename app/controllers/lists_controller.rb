@@ -10,6 +10,11 @@ class ListsController < ApplicationController
         render json: list
     end
 
+    def create 
+        list = List.create!(list_params)
+        render json: list
+    end
+
     def movies 
         list = List.find_by(id: params[:id])
         render json: list.movies
@@ -24,6 +29,12 @@ class ListsController < ApplicationController
         #     custom_movies.push(custom_movie)
         # end 
         # return custom_movies
+    end
+
+    private 
+
+    def list_params 
+        params.permit(:user_id)
     end
 
 end
