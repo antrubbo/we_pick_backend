@@ -3,6 +3,7 @@ class User < ApplicationRecord
     has_many :movie_choices, through: :lists
 
     after_create :create_list
+    before_update :validate_update
 
     validates :username, :email, presence: true
     validates :email, uniqueness:
@@ -13,5 +14,11 @@ class User < ApplicationRecord
     def create_list
         List.create!(user_id: self.id)
     end      
+
+    def validate_update
+        if self.username.nil? || self.email.nil?
+            self.errors
+        end
+    end
 
 end
