@@ -15,7 +15,10 @@ Tmdb::Api.key("99fdd78beedc847a99f420187e092842")
 
 puts "Creating Users"
 
-5.times do
+User.create(username: "ant_rubbo", email: "anthony@gmail.com")
+User.create(username: "alison_cusano", email: "alison@gmail.com")
+
+3.times do
     User.create(username: Faker::Name.name, email: Faker::Internet.email)
 end
 
