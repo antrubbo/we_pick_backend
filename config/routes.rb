@@ -10,5 +10,6 @@ Rails.application.routes.draw do
   get '/get_id', to: 'movies#get_id'
   get '/lists/:id/movies', to: 'lists#movies'
   post 'user_search', to: 'users#user_search'
-  get '/recommendation', to: 'movies#recommendation'
+  get '/genre_list', to: 'movies#genre_list'
+  post '/recommendation', to: 'movies#recommendation'
 end
