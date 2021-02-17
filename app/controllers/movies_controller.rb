@@ -36,6 +36,11 @@ class MoviesController < ApplicationController
         render json: search_movie
     end
 
+    def recommendation 
+        genres = Tmdb::Genre.movie_list
+        render json: genres
+    end
+
     private
 
     def movie_params
