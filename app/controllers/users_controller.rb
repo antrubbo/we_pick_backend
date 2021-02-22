@@ -9,15 +9,15 @@ class UsersController < ApplicationController
         render json: user
     end
 
-    def create 
-        user = User.create(user_params)
-        if user.valid?
-            render json: user
-        else 
-            render json: {errors: user.errors.full_messages},
-            status: :not_acceptable
-        end
-    end
+    # def create 
+    #     user = User.create(user_params)
+    #     if user.valid?
+    #         render json: user
+    #     else 
+    #         render json: {errors: user.errors.full_messages},
+    #         status: :not_acceptable
+    #     end
+    # end
 
     def update
         user = User.find_by(id: params[:id])
@@ -30,15 +30,15 @@ class UsersController < ApplicationController
         end 
     end 
 
-    def login
-        user = User.find_by(email: params[:email])
-        if user
-            render json: user 
-        else  
-            render json: {errors: "Email or password does not match our records"},
-            status: :unauthorized
-        end
-    end
+    # def login
+    #     user = User.find_by(email: params[:email])
+    #     if user
+    #         render json: user 
+    #     else  
+    #         render json: {errors: "Email or password does not match our records"},
+    #         status: :unauthorized
+    #     end
+    # end
 
     def user_search 
         # user = User.find_by("username LIKE ?", params[:username])

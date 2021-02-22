@@ -15,12 +15,12 @@ Tmdb::Api.key("99fdd78beedc847a99f420187e092842")
 
 puts "Creating Users"
 
-User.create(username: "ant_rubbo", email: "anthony@gmail.com")
-User.create(username: "alison_cusano", email: "alison@gmail.com")
+User.create(username: "ant_rubbo", email: "anthony@gmail.com", password: "123")
+User.create(username: "alison_cusano", email: "alison@gmail.com", password: "abc")
 
-3.times do
-    User.create(username: Faker::Name.name, email: Faker::Internet.email)
-end
+# 3.times do
+#     User.create(username: Faker::Name.name, email: Faker::Internet.email)
+# end
 
 # --------------------------------------------------------------------------- 
 
@@ -40,16 +40,6 @@ end
 
 make_popular_api_call
 
-#---------------------------------------------------------------------------
-
-# puts "Creating Lists"
-
-# List.create(user_id: User.first.id)
-# List.create(user_id: User.second.id)
-# List.create(user_id: User.third.id)
-# List.create(user_id: User.fourth.id)
-# List.create(user_id: User.fifth.id)
-
 #---------------------------------------------------------------------------------
 
 puts "Creating Movie Choices"
@@ -68,20 +58,20 @@ MovieChoice.create(list_id: List.second.id, movie_id: num.rand(9..12))
 MovieChoice.create(list_id: List.second.id, movie_id: num.rand(13..16))
 MovieChoice.create(list_id: List.second.id, movie_id: num.rand(17..20))
 
-MovieChoice.create(list_id: List.third.id, movie_id: num.rand(1..4))
-MovieChoice.create(list_id: List.third.id, movie_id: num.rand(5..8))
-MovieChoice.create(list_id: List.third.id, movie_id: num.rand(9..12))
-MovieChoice.create(list_id: List.third.id, movie_id: num.rand(13..16))
-MovieChoice.create(list_id: List.third.id, movie_id: num.rand(17..20))
+# MovieChoice.create(list_id: List.third.id, movie_id: num.rand(1..4))
+# MovieChoice.create(list_id: List.third.id, movie_id: num.rand(5..8))
+# MovieChoice.create(list_id: List.third.id, movie_id: num.rand(9..12))
+# MovieChoice.create(list_id: List.third.id, movie_id: num.rand(13..16))
+# MovieChoice.create(list_id: List.third.id, movie_id: num.rand(17..20))
 
-MovieChoice.create(list_id: List.fourth.id, movie_id: num.rand(1..4))
-MovieChoice.create(list_id: List.fourth.id, movie_id: num.rand(5..8))
-MovieChoice.create(list_id: List.fourth.id, movie_id: num.rand(9..12))
-MovieChoice.create(list_id: List.fourth.id, movie_id: num.rand(13..16))
-MovieChoice.create(list_id: List.fourth.id, movie_id: num.rand(17..20))
+# MovieChoice.create(list_id: List.fourth.id, movie_id: num.rand(1..4))
+# MovieChoice.create(list_id: List.fourth.id, movie_id: num.rand(5..8))
+# MovieChoice.create(list_id: List.fourth.id, movie_id: num.rand(9..12))
+# MovieChoice.create(list_id: List.fourth.id, movie_id: num.rand(13..16))
+# MovieChoice.create(list_id: List.fourth.id, movie_id: num.rand(17..20))
 
-MovieChoice.create(list_id: List.fifth.id, movie_id: num.rand(1..4))
-MovieChoice.create(list_id: List.fifth.id, movie_id: num.rand(5..8))
-MovieChoice.create(list_id: List.fifth.id, movie_id: num.rand(9..12))
-MovieChoice.create(list_id: List.fifth.id, movie_id: num.rand(13..16))
-MovieChoice.create(list_id: List.fifth.id, movie_id: num.rand(17..20))
+# MovieChoice.create(list_id: List.fifth.id, movie_id: num.rand(1..4))
+# MovieChoice.create(list_id: List.fifth.id, movie_id: num.rand(5..8))
+# MovieChoice.create(list_id: List.fifth.id, movie_id: num.rand(9..12))
+# MovieChoice.create(list_id: List.fifth.id, movie_id: num.rand(13..16))
+# MovieChoice.create(list_id: List.fifth.id, movie_id: num.rand(17..20))
