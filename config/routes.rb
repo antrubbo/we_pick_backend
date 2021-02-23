@@ -5,7 +5,8 @@ Rails.application.routes.draw do
   resources :users
   
   post '/register', to: 'auth#register'
-  post '/login', to: 'auth#login'
+  post '/login', to: 'auth#login' 
+  get '/profile', to: 'users#profile'
 
   post '/details', to: 'movies#details'
   post '/search', to: 'movies#search'

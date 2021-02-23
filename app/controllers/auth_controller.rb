@@ -18,7 +18,7 @@ class AuthController < ApplicationController
   # post/login
   def login
     # find user
-    user = User.find_by(username: params[:username])
+    user = User.find_by(email: params[:email])
     # authenticate their pw
     if user && user.authenticate(params[:password])
       # if the user is authenticated, send back... user obj
@@ -28,7 +28,7 @@ class AuthController < ApplicationController
       # UserSerializer.new prevents the password from being sent back in the response
       render json: {user: UserSerializer.new(user), token: token} 
     else 
-      render json: {error: "Invalid username or password"}, status: :unauthorized 
+      render json: {error: "Invalid Email Address or Password"}, status: :unauthorized 
     end
   end
 
