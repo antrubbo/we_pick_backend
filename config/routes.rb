@@ -10,7 +10,6 @@ Rails.application.routes.draw do
 
   post '/details', to: 'movies#details'
   post '/search', to: 'movies#search'
-  get '/get_id', to: 'movies#get_id'
   get '/lists/:id/movies', to: 'lists#movies'
   post 'user_search', to: 'users#user_search'
   get '/genre_list', to: 'movies#genre_list'

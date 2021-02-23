@@ -4,11 +4,6 @@ class UsersController < ApplicationController
         render json: users
     end
 
-    # def show
-    #     user = User.find_by(id: params[:id])
-    #     render json: user
-    # end
-
     def show
         user = AuthorizeRequest.new(request.headers).user
         if user
@@ -17,16 +12,6 @@ class UsersController < ApplicationController
             render json: {error: "Unauthorized Request"}, status: :unauthorized
         end
     end
-
-    # def create 
-    #     user = User.create(user_params)
-    #     if user.valid?
-    #         render json: user
-    #     else 
-    #         render json: {errors: user.errors.full_messages},
-    #         status: :not_acceptable
-    #     end
-    # end
 
     def update
         user = User.find_by(id: params[:id])
@@ -38,16 +23,6 @@ class UsersController < ApplicationController
             render json: {errors: user.errors.full_messages}
         end 
     end 
-
-    # def login
-    #     user = User.find_by(email: params[:email])
-    #     if user
-    #         render json: user 
-    #     else  
-    #         render json: {errors: "Email or password does not match our records"},
-    #         status: :unauthorized
-    #     end
-    # end
 
     def user_search 
         # user = User.find_by("username LIKE ?", params[:username])
@@ -89,14 +64,14 @@ class UsersController < ApplicationController
         if user
             render json: user
         else
-            render json: {error: "nice try, pal."}, status: :unauthorized
+            render json: {error: "Unauthorized Request"}, status: :unauthorized
         end
     end
 
     private
 
     def user_params
-        params.permit(:username, :email)
+        params.permit(:username, :email, :password)
     end
     
 end
