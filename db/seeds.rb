@@ -1,4 +1,3 @@
-require 'faker'
 require 'json'
 require 'rest-client'
 require 'byebug'
@@ -17,10 +16,6 @@ puts "Creating Users"
 
 User.create(username: "ant_rubbo", email: "anthony@gmail.com", password: "123")
 User.create(username: "alison_cusano", email: "alison@gmail.com", password: "abc")
-
-# 3.times do
-#     User.create(username: Faker::Name.name, email: Faker::Internet.email)
-# end
 
 # --------------------------------------------------------------------------- 
 
