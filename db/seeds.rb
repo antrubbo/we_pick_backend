@@ -23,11 +23,12 @@ puts "Creating Popular Movies"
 
 def make_popular_api_call
     popular_movies = Tmdb::Movie.popular
-    config = Tmdb::Configuration.get
-    create_popular_movies(popular_movies, config)
+    # RestClient.get("https://api.themoviedb.org/3/movie/popular?api_key=99fdd78beedc847a99f420187e092842&language=en-US&page=1")
+    # pop_movies = JSON.parse(popular_movies)
+    create_popular_movies(popular_movies)
 end
 
-def create_popular_movies(popular_movies, config)
+def create_popular_movies(popular_movies)
     popular_movies.results.each do |m|
         Movie.create(title: m.title, description: m.overview, release_date: m.release_date, genres: m.genre_ids, runtime: m.runtime, poster_path: m.poster_path, search_id: m.id)
     end
