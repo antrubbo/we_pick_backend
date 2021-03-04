@@ -23,8 +23,6 @@ puts "Creating Popular Movies"
 
 def make_popular_api_call
     popular_movies = Tmdb::Movie.popular
-    # RestClient.get("https://api.themoviedb.org/3/movie/popular?api_key=99fdd78beedc847a99f420187e092842&language=en-US&page=1")
-    # pop_movies = JSON.parse(popular_movies)
     create_popular_movies(popular_movies)
 end
 
