@@ -1,1 +1,1 @@
-Back end Rails API for my WeWork! project.
+Back end Rails API for my WePick! project.
