@@ -4,14 +4,14 @@ class UsersController < ApplicationController
         render json: users
     end
 
-    def show
-        user = AuthorizeRequest.new(request.headers).user
-        if user
-            render json: user
-        else
-            render json: {error: "Unauthorized Request"}, status: :unauthorized
-        end
-    end
+    # def show
+    #     user = AuthorizeRequest.new(request.headers).user
+    #     if user
+    #         render json: user
+    #     else
+    #         render json: {error: "Unauthorized Request"}, status: :unauthorized
+    #     end
+    # end
 
     def update
         user = User.find_by(id: params[:id])
